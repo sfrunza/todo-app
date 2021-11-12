@@ -1,6 +1,6 @@
 # Todo app
 
-Simple Rails Todo app with due dates.
+Simple Rails Todo app with due dates.(minimal styling).
 
 ## Installation
 
