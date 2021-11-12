@@ -1,24 +1,21 @@
-# README
+# Todo app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Simple Rails Todo app with due dates.
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+Ruby 3.0.0,  
+Rails 6.1.4
 
-* System dependencies
+```bash
+git clone https://github.com/sfrunza/todo-app.git
+cd todo-app
+bundle install
+rake db:create && rake db:migrate
+rails s
 
-* Configuration
+```
 
-* Database creation
+## Contributing
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
