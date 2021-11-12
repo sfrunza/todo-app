@@ -1,7 +1,7 @@
 <div class="container-sm">
   <div class="column">
   <%= link_to 'Back', todo_items_path,class: "btn btn-light" %>
-    <h3>Day: <strong><%= @todo_date.day.strftime("%b %d, %Y") %></strong></h3>
+    <h3><%= @todo_date.day.strftime("%b %d, %Y") %></h3>
   </div>
   
   <div class="row">

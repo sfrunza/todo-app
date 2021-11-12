@@ -19,13 +19,18 @@ class TodoDatesController < ApplicationController
     @todo_date = TodoDate.new(todo_date_params)
 
     respond_to do |format|
-      if @todo_date.save
-        format.html { redirect_to @todo_date, notice: "Todo date was successfully created." }
-        format.json { render :show, status: :created, location: @todo_date }
-      else
+      if  @todo_date.nil?
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @todo_date.errors, status: :unprocessable_entity }
-      end
+      else 
+        if @todo_date.save
+          format.html { redirect_to @todo_date, notice: "Todo date was successfully created." }
+          format.json { render :show, status: :created, location: @todo_date }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @todo_date.errors, status: :unprocessable_entity }
+        end
+      end  
     end
   end
 
