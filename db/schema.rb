@@ -10,9 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2021_11_11_191330) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "todo_dates", force: :cascade do |t|
+    t.date "day"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "todo_items", force: :cascade do |t|
+    t.string "title"
+    t.datetime "due_at"
+    t.bigint "todo_date_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["todo_date_id"], name: "index_todo_items_on_todo_date_id"
+  end
+
+  add_foreign_key "todo_items", "todo_dates"
 end

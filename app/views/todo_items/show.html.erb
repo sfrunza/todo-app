@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+    <div class="row">
+    <div class="col-sm d-flex justify-content-center">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= @todo_item.title %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= @todo_item.due_at.strftime("%b %d, %Y") %>, <%= @todo_item.due_at.strftime("%I:%M%p") %></h6>
+          <%= link_to 'Edit', edit_todo_item_path(@todo_item), class: "card-link" %>
+          <%= link_to 'Back', todo_items_path, class: "card-link" %>
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
